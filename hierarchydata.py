@@ -1,0 +1,94 @@
+import re
+
+
+def xml_hierarchy_re(xml_string, element_name):
+    pattern = r"<" + element_name + ".*?>(.*?)</" + element_name + ">"
+    matches = re.findall(pattern, xml_string, re.DOTALL)
+    for match in matches:
+        print(match)
+
+
+xml_string = """
+<Employees>
+    <Employee>
+        <PS.No.>40032229</PS.No.>
+        <Employee_Name>Shanmukh</Employee_Name>
+        <DOB>05-05-2001</DOB>
+        <DOJ>27-12-2022</DOJ>
+        <DOR>12-12-2022</DOR>
+        <Email>Shanmukh@gmail.com</Email>
+        <Contact>8790748765</Contact>
+        <Designation>Assosiate Engineer</Designation>
+        <Business_Unit>Embedded VTR</Business_Unit>
+        <Base_Location>Baroda</Base_Location>
+        <LTTS_Grade>2</LTTS_Grade>
+    </Employee>
+    <Employee>
+        <PS.No.>40032481</PS.No.>
+        <Employee_Name>Lakshmikar</Employee_Name>
+        <DOB>18-12-2000</DOB>
+        <DOJ>27-12-2022</DOJ>
+        <DOR>05-12-2022</DOR>
+        <Email>lakshmikar@gmail</Email>
+        <Contact>7412355688</Contact>
+        <Designation>Assosiate Engineer</Designation>
+        <Business_Unit>Embedded VTR</Business_Unit>
+        <Base_Location>Mumbai</Base_Location>
+        <LTTS_Grade>2</LTTS_Grade>
+    </Employee>
+    <Employee>
+        <PS.No.>40032484</PS.No.>
+        <Employee_Name>Harshita</Employee_Name>
+        <DOB>05-06-2000</DOB>
+        <DOJ>27-12-2022</DOJ>
+        <DOR>08-12-2022</DOR>
+        <Email>lakshmikar@gmail.com</Email>
+        <Contact>895214754</Contact>
+        <Designation>Assosiate Engineer</Designation>
+        <Business_Unit>Embedded VTR</Business_Unit>
+        <Base_Location>Chennai</Base_Location>
+        <LTTS_Grade>2</LTTS_Grade>
+    </Employee>
+    <Employee>
+        <PS.No.>40032485</PS.No.>
+        <Employee_Name>Drishti</Employee_Name>
+        <DOB>04-07-2000</DOB>
+        <DOJ>27-12-2022</DOJ>
+        <DOR>09-12-2022</DOR>
+        <Email>Drishti@gmail.com</Email>
+        <Contact>954896741</Contact>
+        <Designation>Assosiate Engineer</Designation>
+        <Business_Unit>Embedded VTR</Business_Unit>
+        <Base_Location>Pune</Base_Location>
+        <LTTS_Grade>2</LTTS_Grade>
+    </Employee>
+    <Employee>
+        <PS.No.>40032484</PS.No.>
+        <Employee_Name>Sejal</Employee_Name>
+        <DOB>04-01-2001</DOB>
+        <DOJ>27-12-2022</DOJ>
+        <DOR>02-12-2022</DOR>
+        <Email>Sejal@gmail.com</Email>
+        <Contact>895214754</Contact>
+        <Designation>Assosiate Engineer</Designation>
+        <Business_Unit>Embedded VTR</Business_Unit>
+        <Base_Location>Hyderabad</Base_Location>
+        <LTTS_Grade>2</LTTS_Grade>
+    </Employee>
+    <Employee>
+        <PS.No.>40032484</PS.No.>
+        <Employee_Name>Saloni</Employee_Name>
+        <DOB>02-04-2001</DOB>
+        <DOJ>27-12-2022</DOJ>
+        <DOR>11-12-2022</DOR>
+        <Email>Saloni@gmail.com</Email>
+        <Contact>754899544</Contact>
+        <Designation>Assosiate Engineer</Designation>
+        <Business_Unit>Embedded VTR</Business_Unit>
+        <Base_Location>Banglore</Base_Location>
+        <LTTS_Grade>2</LTTS_Grade>
+    </Employee>
+</Employees>
+"""
+
+# xml_hierarchy_re(xml_string, "employee")
